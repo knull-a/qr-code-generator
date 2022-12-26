@@ -15,76 +15,84 @@
 <body>
   <h1 class="header">QR Code <br> Generator</h1>
   <div class="main">
-    <div class="container front" id="qr-code-settings">
-      <div class="main-header">
-        <h2 class="title">Generate your QR code</h2>
-        <p class="subtitle">Adjust the settings below to make your QR <br> code look as you want</p>
-      </div>
-      <div class="settings">
-        <div class="adjustment">
-          <label for="data">Text / URL</label>
-          <p class="subtitle">Include text or a URL you want the QR code to lead to</p>
-          <input type="text" name="data" id="data">
+    <div class="container">
+      <div id="qr-code-settings">
+        <div class="main-header">
+          <h2 class="title">Generate your QR code</h2>
+          <p class="subtitle">Adjust the settings below to make your QR <br> code look as you want</p>
         </div>
-      </div>
-      <div class="colors">
-        <div class="adjustment">
-          <label for="color">Main Color</label>
-          <input type="color" id="color" value="#000000">
-          <span class="subtitle" id="color-value">#ffffff</span>
-        </div>
-        <div class="adjustment">
-          <label for="bg-color">Background Color</label>
-          <input type="color" id="bg-color" value="#ffffff">
-          <span class="subtitle" id="bg-color-value">#ffffff</span>
-        </div>
-      </div>
-      <div class="settings">
-        <div class="adjustment">
-          <label for="size">Size</label>
-          <p id="size-value" class="subtitle">0 x 0</p>
-          <div class="slider">
-            <input type="range" name="size" id="size" value="200" min="100" max="1000" step="100">
+        <div class="settings">
+          <div class="adjustment">
+            <label for="data">Text / URL</label>
+            <p class="subtitle">Include text or a URL you want the QR code to lead to</p>
+            <input type="text" name="data" id="data">
           </div>
         </div>
-        <div class="adjustment">
-          <label for="margin">Margin</label>
-          <p id="margin-value" class="subtitle">0 px</p>
-          <div class="slider">
-            <input type="range" name="margin" id="margin" value="2" min="0" max="50" step="1">
+        <div class="colors">
+          <div class="adjustment">
+            <label for="color">Main Color</label>
+            <input type="color" id="color" value="#000000">
+            <span class="subtitle" id="color-value">#000000</span>
+          </div>
+          <div class="adjustment">
+            <label for="bg-color">Background Color</label>
+            <input type="color" id="bg-color" value="#ffffff">
+            <span class="subtitle" id="bg-color-value">#ffffff</span>
           </div>
         </div>
-        <div class="adjustment">
-          <fieldset>
-            <legend>Image Format</legend>
-            <div>
-              <input type="radio" name="format" id="png" value="png" checked>
-              <label for="png">PNG</label>
+        <div class="settings">
+          <div class="adjustment">
+            <label for="size">Size</label>
+            <p id="size-value" class="subtitle">200 x 200</p>
+            <div class="slider">
+              <input type="range" name="size" id="size" value="200" min="100" max="1000" step="100">
             </div>
-            <div>
-              <input type="radio" name="format" id="gif" value="gif">
-              <label for="gif">GIF</label>
+          </div>
+          <div class="adjustment">
+            <label for="margin">Margin</label>
+            <p id="margin-value" class="subtitle">2 px</p>
+            <div class="slider">
+              <input type="range" name="margin" id="margin" value="2" min="0" max="50" step="1">
             </div>
-            <div>
-              <input type="radio" name="format" id="jpeg" value="jpeg">
-              <label for="jpeg">JPEG</label>
-            </div>
-            <div>
-              <input type="radio" name="format" id="jpg" value="jpg">
-              <label for="jpg">JPG</label>
-            </div>
-            <div>
-              <input type="radio" name="format" id="svg" value="svg">
-              <label for="svg">SVG</label>
-            </div>
-          </fieldset>
+          </div>
+          <div class="adjustment">
+            <fieldset>
+              <legend>Image Format</legend>
+              <div>
+                <input type="radio" name="format" id="png" value="png" checked="true">
+                <label for="png">PNG</label>
+              </div>
+              <div>
+                <input type="radio" name="format" id="gif" value="gif">
+                <label for="gif">GIF</label>
+              </div>
+              <div>
+                <input type="radio" name="format" id="jpeg" value="jpeg">
+                <label for="jpeg">JPEG</label>
+              </div>
+              <div>
+                <input type="radio" name="format" id="jpg" value="jpg">
+                <label for="jpg">JPG</label>
+              </div>
+              <div>
+                <input type="radio" name="format" id="svg" value="svg">
+                <label for="svg">SVG</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <button id="btn" type="submit" class="btn disabled" disabled="true">Generate QR Code</button>
+      </div>
+      <div id="qr-code-result" style="display: none;">
+        <div class="main-header">
+          <h2 class="title">Your generated QR Code</h2>
+          <img alt="QR Code" id="qr-image">
+          <a class="btn" id="download" download><img src="img/download.svg" alt="Download" class="download-img"> Download</a>
+          <p class="subtitle">Need to make some changes?</p>
+          <button class="btn" id="go-back">Go back</button>
         </div>
       </div>
-      <button id="btn" type="submit" disabled="true">Generate QR Code</button>
     </div>
-    <!-- <div class="container back" id="qr-code-result"> -->
-  
-    <!-- </div> -->
   </div>
   <script src="script.js"></script>
 </body>
