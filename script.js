@@ -56,7 +56,7 @@ function prepareParameters(params) {
 
 function getQrCode(parameters) {
   const urlParams = new URLSearchParams(parameters).toString()
-  const baseUrl = "http://api.qrserver.com/v1/create-qr-code/";
+  const baseUrl = "https://api.qrserver.com/v1/create-qr-code/";
   const fullUrl = `${baseUrl}?${urlParams}`;
   
   fetch(fullUrl).then((response) => {
