@@ -211,11 +211,6 @@ fieldset div label {
   width: 40px;
 }
 
-@media screen and (max-width: 425px) {
-  .container {
-    height: 100vh;
-  }
-}
 
 
 
